@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import ValidationError from "../ValidationError";
 import Results from "../Results/Results";
 import config from "../config";
@@ -8,6 +8,8 @@ import ApiContext from "../ApiContext";
 class Search extends Component {
   state = {
     query: "",
+    movies: [],
+    errors: "",
   };
 
   handleMovieQuery = (e) => {
@@ -32,7 +34,7 @@ class Search extends Component {
     fetch(url)
       .then((movie) => {
         console.log(url);
-        if (!movie.ok) {
+        if (!movie.status === 200) {
           throw new Error("Could not retrieve movies. Please try again later.");
         }
         return movie.json();
@@ -40,8 +42,10 @@ class Search extends Component {
       .then((movieJson) => {
         this.setState({
           movies: movieJson.Search,
+          errors: movieJson.Error,
         });
-        console.log(this.state.movies)
+        console.log(this.state.movies);
+        console.log(this.state.errors);
       });
   };
 
@@ -49,13 +53,16 @@ class Search extends Component {
     const value = {
       movies: this.state.movies,
       query: this.state.query,
+      errors: this.state.errors,
     };
     return (
       <ApiContext.Provider value={value}>
         <div className="App_main">
           <nav>
             <Link to="/">Moviedex</Link> | <Link to="/search">Find Movies</Link>{" "}
-            | <Link to="/savedmovies">My List</Link>
+            | <Link to="/savedmovies">My List</Link> |{" "}
+            <Link to="/createaccount">Create Account</Link> |{" "}
+            <Link to="/login">Login</Link>
           </nav>
           <section>
             <header>

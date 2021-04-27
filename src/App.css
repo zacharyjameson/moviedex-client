@@ -69,6 +69,7 @@ img {
 .error {
     font-size: 12px;
     font-style: italic;
+    text-align: center;
 }
 
 .hidden {
