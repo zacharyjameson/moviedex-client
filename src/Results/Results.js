@@ -1,43 +1,24 @@
 import React, { Component } from "react";
+import ApiContext from "../ApiContext";
 import "./Results.css";
 
 class Results extends Component {
-  state = {};
+  static contextType = ApiContext;
   render() {
+    const { movies = [] } = this.context;
     return (
-      <section>
-        <h3>Results</h3>
+      <section className={movies.length > 0 ? "results" : "hidden"}>
+        <h3>Results</h3>{console.log(movies)}
         <ul>
-          <li>
-            <img src="#" alt="movie poster image" />
-            <p>The Lord of the Rings: The Fellowship of the Ring</p>
-            <button type="button" /*onClick="addToList()"*/>
-              Save to List
-            </button>
-            <button type="button" /*onClick="deleteSavedMovie()"*/>
-              Remove
-            </button>
-          </li>
-          <li>
-            <img src="#" alt="movie poster image" />
-            <p>The Lord of the Rings: The Two Towers</p>
-            <button type="button" /*onClick="addToList()"*/>
-              Save to List
-            </button>
-            <button type="button" /*onClick="deleteSavedMovie()"*/>
-              Remove
-            </button>
-          </li>
-          <li>
-            <img src="#" alt="movie poster image" />
-            <p>The Lord of the Rings: The Return of the King</p>
-            <button type="button" /*onClick="addToList()"*/>
-              Save to List
-            </button>
-            <button type="button" /*onClick="deleteSavedMovie()"*/>
-              Remove
-            </button>
-          </li>
+          {movies.map((movie) => {
+            return <li key={movie.imdbID}>
+            <img src={movie.Poster} alt="movie poster unavailable"/>
+              <p>
+                {movie.Title} {movie.Year}
+              </p>
+              <button type="button">Save to List</button>
+            </li>;
+          })}
         </ul>
       </section>
     );

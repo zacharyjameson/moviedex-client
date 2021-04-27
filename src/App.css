@@ -57,8 +57,6 @@ ul {
 li {
   display: inline-block;
   margin: 10px;
-  border: 2px solid black;
-  border-radius: 15px;
   padding: 10px;
   width: 50%;
 }
@@ -67,3 +65,19 @@ img {
   font-style: italic;
   font-size: 13px;
 }
+
+.error {
+    font-size: 12px;
+    font-style: italic;
+}
+
+.hidden {
+    display: none;
+}
+
+img {
+    border-radius: 15px;
+    height: auto;
+    max-width: 60%;
+}
+
