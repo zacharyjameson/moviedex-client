@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Route, Link } from "react-router-dom";
+import { Route } from "react-router-dom";
 import "./App.css";
 import HomePage from "./HomePage/HomePage";
+import SavedList from './SavedList/SavedList';
 import Search from './SearchPage/SearchPage';
 
 class App extends Component {
@@ -11,6 +12,7 @@ class App extends Component {
       <>
         <Route exact path="/" component={HomePage} />
         <Route path="/search" component={Search} />
+        <Route path="/savedmovies" component={SavedList} />
       </>
     )
   }
