@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import "../App.css";
 
 class HomePage extends Component {
   state = {};
   render() {
     return (
-      <section>
-        <header className="App_header">
+      <section className="App_main">
+        <header>
           <h1>Moviedex</h1>
         </header>
         <div>

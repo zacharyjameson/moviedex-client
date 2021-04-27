@@ -6,23 +6,23 @@ class Search extends Component {
   state = {};
   render() {
     return (
-    <div className="searchPage">
-      <section>
+      <div className="App_main">
         <nav>
-        <Link to="/">Moviedex</Link> | <Link to="/search">Find Movies</Link>
+          <Link to="/">Moviedex</Link> | <Link to="/search">Find Movies</Link>
         </nav>
-        <header>
-          <h2>Find a Movie</h2>
-        </header>
-        <label for="movieSearch">Search</label>
-        <input
-          type="text"
-          id="movieSearch"
-          placeholder="The Lord of the Rings"
-        />
-        <button type="submit">submit</button>
-      </section>
-      <Results />
+        <section>
+          <header>
+            <h2>Find a Movie</h2>
+          </header>
+          <label for="movieSearch">Search: </label>
+          <input
+            type="text"
+            id="movieSearch"
+            placeholder="The Lord of the Rings"
+          />
+          <button type="submit">submit</button>
+          <Results />
+        </section>
       </div>
     );
   }

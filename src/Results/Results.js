@@ -7,7 +7,6 @@ class Results extends Component {
     return (
       <section>
         <h3>Results</h3>
-        <div className="list">
         <ul>
           <li>
             <img src="#" alt="movie poster image" />
@@ -40,7 +39,6 @@ class Results extends Component {
             </button>
           </li>
         </ul>
-        </div>
       </section>
     );
   }

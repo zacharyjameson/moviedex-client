@@ -1,7 +1,24 @@
+@font-face {
+  font-family: fairlyodd;
+  src: url(BandeinsStrangeVariable.ttf);
+}
+
+* {
+  text-align: center;
+  box-sizing: border-box;
+  font-family: fairlyodd;
+}
+
+.App_main {
+  margin: auto;
+  text-align: center;
+  width: 90%;
+}
+
 nav,
 footer {
   padding: 20px;
-  background-color: #aaa;
+  background-color: black;
 }
 
 nav {
@@ -10,13 +27,42 @@ nav {
   left: 0;
   right: 0;
   z-index: 10;
+  color: #1db954;
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: grey;
+}
+
+a:hover {
+  font-size: 17px;
+  color: cyan;
 }
 
 header {
-    margin-top: 70px;
+  margin-top: 70px;
 }
 
-.App_main {
-    margin: 10px;
-    text-align: center;
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+li {
+  display: inline-block;
+  margin: 10px;
+  border: 2px solid black;
+  border-radius: 15px;
+  padding: 10px;
+  width: 50%;
+}
+
+img {
+  font-style: italic;
+  font-size: 13px;
 }
