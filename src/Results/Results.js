@@ -19,7 +19,7 @@ class Results extends Component {
             {movies.map((movie, index) => {
               return (
                 <li key={index + 1}>
-                  <img src={movie.Poster} alt="movie poster unavailable" />
+                  <img src={movie.Poster} />
                   <p>
                     {movie.Title} {movie.Year}
                   </p>
