@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import AddMovie from "../AddMovie/AddMovie";
 import ApiContext from "../ApiContext";
-import config from "../config";
 import "./Results.css";
 
 class Results extends Component {

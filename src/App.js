@@ -1,13 +1,12 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
 import "./App.css";
-import CreateAccount from "./Accounts/CreateAccount";
 import HomePage from "./HomePage/HomePage";
 import SavedList from "./SavedList/SavedList";
 import Search from "./SearchPage/SearchPage";
-import LogInOut from "./Accounts/LogInOut";
 import ApiContext from "./ApiContext";
 import config from "./config";
+import RandomMovie from "./RandomMovie/RandomMovie";
 
 class App extends Component {
   state = {
@@ -26,7 +25,6 @@ class App extends Component {
       this.setState({
         savedMovies,
       });
-      console.log(this.state.savedMovies)
     });
   };
 
@@ -38,9 +36,11 @@ class App extends Component {
 
   handleDeleteMovie = (movieId) => {
     this.setState({
-      savedMovies: this.state.savedMovies.filter((movie) => movie.id !== movieId)
-    })
-  }
+      savedMovies: this.state.savedMovies.filter(
+        (movie) => movie.id !== movieId
+      ),
+    });
+  };
 
   handleMovieQuery = (e) => {
     this.setState({
@@ -56,6 +56,13 @@ class App extends Component {
     }
   }
 
+  validateSavedMovies() {
+    const savedMovies = this.state.savedMovies;
+    if (savedMovies.length === 0) {
+      return "Save some movies first!";
+    }
+  }
+
   handleSubmit = (e) => {
     e.preventDefault();
     const query = this.state.query;
@@ -63,7 +70,6 @@ class App extends Component {
 
     fetch(url)
       .then((movie) => {
-        console.log(url);
         if (!movie.status === 200) {
           throw new Error("Could not retrieve movies. Please try again later.");
         }
@@ -85,8 +91,7 @@ class App extends Component {
         <Route exact path="/" component={HomePage} />
         <Route path="/search" component={Search} />
         <Route path="/savedmovies" component={SavedList} />
-        <Route path="/createaccount" component={CreateAccount} />
-        <Route path="/login" component={LogInOut} />
+        <Route path="/randomizer" component={RandomMovie} />
       </>
     );
   }
@@ -99,9 +104,10 @@ class App extends Component {
       handleSubmit: this.handleSubmit,
       handleMovieQuery: this.handleMovieQuery,
       validateMovie: this.validateMovie(),
+      validateSaved: this.validateSavedMovies(),
       savedMovies: this.state.savedMovies,
       deleteMovie: this.handleDeleteMovie,
-      fetchData: this.fetchAllData
+      fetchData: this.fetchAllData,
     };
     return (
       <ApiContext.Provider value={value}>

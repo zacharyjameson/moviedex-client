@@ -1,28 +1,54 @@
 import React, { Component } from "react";
 import ApiContext from "../ApiContext";
+import config from "../config";
 import DeleteMovie from "../DeleteMovie/DeleteMovie";
 import Navbar from "../Nav/Navbar";
+import RandomMovie from "../RandomMovie/RandomMovie";
+import "../App.css";
 
 class SavedList extends Component {
+  static defaultProps = {
+    selectedMovie: [],
+  };
   static contextType = ApiContext;
+
+  handleClearList = (e) => {
+    e.preventDefault();
+
+    const requestOptions = {
+      method: "DELETE",
+      headers: {
+        "content-type": "application/json",
+      },
+    };
+
+    fetch(`${config.MOVIE_DATABASE_URL}/movies`, requestOptions)
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Whoopsie! Please try that again.");
+        }
+      })
+      .then(() => {
+        this.context.fetchData();
+      })
+      .catch((error) => {
+        console.log("Error: ", error);
+      });
+  };
 
   render() {
     const { savedMovies = [] } = this.context;
-    const deleteMovie = this.context;
+
     return (
       <div className="App_main">
         <Navbar />
         <section>
           <header>
             <h1>My List</h1>
-            <button type="button">Let Moviedex Decide!</button>
-            <div>
-              <p>Moviedex has chosen...</p>
-              <img src="#" alt="" />
-              <p>The Lord of the Rings: The Fellowship of the Ring</p>
-              <p>Nice.</p>
-            </div>
           </header>
+          <button type="button" onClick={this.handleClearList}>
+            Clear My List
+          </button>
           <ul>
             {savedMovies.map((savedMovie) => {
               return (

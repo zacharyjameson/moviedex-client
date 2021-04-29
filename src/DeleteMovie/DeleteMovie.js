@@ -37,7 +37,7 @@ class DeleteMovie extends Component {
       <div id={id}>
         <img src={movie_poster} />
         <p>
-          {movie_title} {year_released}
+          {movie_title} - {year_released}
         </p>
         <button type="button" onClick={this.handleClickRemove}>Remove From List</button>
       </div>

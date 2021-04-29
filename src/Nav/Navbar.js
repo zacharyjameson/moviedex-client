@@ -13,8 +13,7 @@ class Navbar extends Component {
       <nav>
         <Link to="/">Moviedex</Link> | <Link to="/search">Find Movies</Link> |{" "}
         <Link to="/savedmovies">My List ({savedMovies.savedMovies.length})</Link> |{" "}
-        <Link to="/createaccount">Create Account</Link> |{" "}
-        <Link to="/login">Login</Link>
+        <Link to="/randomizer">Randomizer</Link>
       </nav>
     );
   }
