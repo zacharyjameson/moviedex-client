@@ -18,8 +18,7 @@ class HomePage extends Component {
         </div>
         <div>
           <p>
-            <Link to="/search">Click to Begin</Link> or{" "}
-            <Link to="/createaccount">create an account</Link> to save your list!
+            <Link to="/search">Click to Begin!</Link>
           </p>
         </div>
       </section>
