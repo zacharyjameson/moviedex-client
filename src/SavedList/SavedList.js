@@ -1,51 +1,39 @@
-import { Link } from "react-router-dom";
 import React, { Component } from "react";
+import ApiContext from "../ApiContext";
+import Movie from "../Movie/Movie";
+import Navbar from "../Nav/Navbar";
 
 class SavedList extends Component {
-  state = {};
+
+  static contextType = ApiContext;
+
+
+
   render() {
+    const { savedMovies = [] } = this.context;
+    const deleteMovie = this.context;
     return (
       <div className="App_main">
-        <nav>
-          <Link to="/">Moviedex</Link> | <Link to="/search">Find Movies</Link> |{" "}
-          <Link to="/savedmovies">My List</Link> |{" "}
-          <Link to="/createaccount">Create Account</Link> | <Link to="/login">Login</Link>
-        </nav>
+        <Navbar />
         <section>
           <header>
             <h1>My List</h1>
-            <button type="button">
-              Let Moviedex Decide!
-            </button>
+            <button type="button">Let Moviedex Decide!</button>
             <div>
               <p>Moviedex has chosen...</p>
-              <img src="#" alt="movie poster image" />
+              <img src="#" alt="" />
               <p>The Lord of the Rings: The Fellowship of the Ring</p>
               <p>Nice.</p>
             </div>
           </header>
           <ul>
-            <li>
-              <img src="#" alt="movie poster image" />
-              <p>The Lord of the Rings: The Fellowship of the Ring</p>
-              <button type="button">
-                Remove
-              </button>
-            </li>
-            <li>
-              <img src="#" alt="movie poster image" />
-              <p>The Lord of the Rings: The Two Towers</p>
-              <button type="button">
-                Remove
-              </button>
-            </li>
-            <li>
-              <img src="#" alt="movie poster image" />
-              <p>The Lord of the Rings: The Return of the King</p>
-              <button type="button" >
-                Remove
-              </button>
-            </li>
+              {savedMovies.map((savedMovie) => {
+                return (
+                  <li key={savedMovie.id} id={savedMovie.id}>
+                    <Movie id={savedMovie.id} movie_title={savedMovie.movie_title} movie_poster={savedMovie.movie_poster} year_released={savedMovie.year_released}/>
+                  </li>
+                );
+              })}
           </ul>
         </section>
       </div>

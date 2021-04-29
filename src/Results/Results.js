@@ -1,9 +1,14 @@
 import React, { Component } from "react";
 import ApiContext from "../ApiContext";
+import config from "../config";
 import "./Results.css";
 
 class Results extends Component {
+
   static contextType = ApiContext;
+
+
+
   render() {
     const { movies = [] } = this.context;
     const ohNos = this.context;
@@ -23,7 +28,9 @@ class Results extends Component {
                   <p>
                     {movie.Title} {movie.Year}
                   </p>
-                  <button type="button">Save to List</button>
+                  <button type="button">
+                    Save to List
+                  </button>
                 </li>
               );
             })}
