@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import ApiContext from "../ApiContext";
 import config from "../config";
 
-class Movie extends Component {
+class DeleteMovie extends Component {
   static defaultProps = {
     onDeleteMovie: () => {},
   };
@@ -45,4 +45,4 @@ class Movie extends Component {
   }
 }
 
-export default Movie;
+export default DeleteMovie;

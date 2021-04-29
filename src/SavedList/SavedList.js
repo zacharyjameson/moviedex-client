@@ -1,13 +1,10 @@
 import React, { Component } from "react";
 import ApiContext from "../ApiContext";
-import Movie from "../Movie/Movie";
+import DeleteMovie from "../DeleteMovie/DeleteMovie";
 import Navbar from "../Nav/Navbar";
 
 class SavedList extends Component {
-
   static contextType = ApiContext;
-
-
 
   render() {
     const { savedMovies = [] } = this.context;
@@ -27,13 +24,18 @@ class SavedList extends Component {
             </div>
           </header>
           <ul>
-              {savedMovies.map((savedMovie) => {
-                return (
-                  <li key={savedMovie.id} id={savedMovie.id}>
-                    <Movie id={savedMovie.id} movie_title={savedMovie.movie_title} movie_poster={savedMovie.movie_poster} year_released={savedMovie.year_released}/>
-                  </li>
-                );
-              })}
+            {savedMovies.map((savedMovie) => {
+              return (
+                <li key={savedMovie.id} id={savedMovie.id}>
+                  <DeleteMovie
+                    id={savedMovie.id}
+                    movie_title={savedMovie.movie_title}
+                    movie_poster={savedMovie.movie_poster}
+                    year_released={savedMovie.year_released}
+                  />
+                </li>
+              );
+            })}
           </ul>
         </section>
       </div>

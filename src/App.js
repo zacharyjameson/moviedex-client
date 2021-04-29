@@ -100,7 +100,8 @@ class App extends Component {
       handleMovieQuery: this.handleMovieQuery,
       validateMovie: this.validateMovie(),
       savedMovies: this.state.savedMovies,
-      deleteMovie: this.handleDeleteMovie
+      deleteMovie: this.handleDeleteMovie,
+      fetchData: this.fetchAllData
     };
     return (
       <ApiContext.Provider value={value}>

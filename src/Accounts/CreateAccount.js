@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import Navbar from "../Nav/Navbar";
 
 class CreateAccount extends Component {
   render() {
@@ -8,11 +8,7 @@ class CreateAccount extends Component {
           <header>
               <h2>Create Account</h2>
             </header>
-        <nav>
-          <Link to="/">Moviedex</Link> | <Link to="/search">Find Movies</Link> |{" "}
-          <Link to="/savedmovies">My List</Link> |{" "}
-          <Link to="/createaccount">Create Account</Link> | <Link to="/login">Login</Link>
-        </nav>
+        <Navbar />
         <form>
           <div>
             <label htmlFor="username">Username</label>
