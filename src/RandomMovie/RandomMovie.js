@@ -42,7 +42,7 @@ class RandomMovie extends Component {
             indecisiveness once and for all!
           </p>
 
-          <button type="button" onClick={this.handleRandomClick} >
+          <button className={movies.savedMovies.length > 0 ? "results" : "hidden"} type="button" onClick={this.handleRandomClick} >
             Pls Help!
           </button>
           <ValidationError message={movies.validateSaved} />

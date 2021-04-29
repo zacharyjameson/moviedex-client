@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ApiContext from "../ApiContext";
 
 class Movie extends Component {
   render() {
@@ -7,7 +8,9 @@ class Movie extends Component {
       <div className={clicked ? "results" : "hidden"}>
         <p>Moviedex has chosen...</p>
         <img src={poster} />
-        <p>{title} - {year}</p>
+        <p>
+          {title} - {year}
+        </p>
         <p className="nice">Nice.</p>
       </div>
     );
