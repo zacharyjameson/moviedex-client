@@ -15,8 +15,7 @@
   width: 90%;
 }
 
-nav,
-footer {
+nav {
   padding: 20px;
   background-color: black;
 }
@@ -29,6 +28,16 @@ nav {
   z-index: 10;
   color: #1db954;
   font-weight: bold;
+}
+
+footer {
+  position: fixed;
+  margin-top: 100px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: black;
+  padding: 20px;
 }
 
 a {
@@ -46,7 +55,7 @@ a:hover {
 }
 
 header {
-  margin-top: 70px;
+  margin-top: 85px;
 }
 
 ul {
@@ -64,6 +73,7 @@ li {
 img {
   font-style: italic;
   font-size: 13px;
+  width: 100%;
 }
 
 .error {
@@ -76,14 +86,7 @@ img {
   display: none;
 }
 
-img {
-  border-radius: 15px;
-  height: auto;
-  max-width: 60%;
-  background-image: url(./images/notavailable4.jpg);
-  width: 200px;
-  height: 100%;
-}
+
 
 .randomMovie img {
   text-align: center;
@@ -93,4 +96,9 @@ img {
 .nice {
   font-style: italic;
   font-size: 14px;
+}
+
+.results {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
 }

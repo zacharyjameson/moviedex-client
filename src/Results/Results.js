@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import AddMovie from "../AddMovie/AddMovie";
 import ApiContext from "../ApiContext";
+import Footer from "../Footer/Footer";
 import "./Results.css";
 
 class Results extends Component {
@@ -9,14 +10,14 @@ class Results extends Component {
   render() {
     const { movies = [] } = this.context;
     const ohNos = this.context;
+    
     console.log("searchedResults:", movies);
     return (
       <div>
         <p>{ohNos.errors}</p>
 
         <section className={movies.length ? "results" : "hidden"}>
-          <h3>Results</h3>
-          <h5>{ohNos.query}</h5>
+          <h3>Results for...<br/>{ohNos.query.toUpperCase()}</h3>
           <ul>
             {movies.map((movie, index) => {
               return (

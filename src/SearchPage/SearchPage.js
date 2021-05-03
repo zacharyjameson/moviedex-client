@@ -3,13 +3,15 @@ import ValidationError from "../ValidationError";
 import Results from "../Results/Results";
 import ApiContext from "../ApiContext";
 import Navbar from "../Nav/Navbar";
+import Footer from "../Footer/Footer";
 
 class Search extends Component {
-static contextType = ApiContext;
+  static contextType = ApiContext;
 
   render() {
     const movies = this.context;
     return (
+      <div>
         <div className="App_main">
           <Navbar />
           <section>
@@ -30,8 +32,10 @@ static contextType = ApiContext;
               <ValidationError message={movies.validateMovie} />
             </form>
             <Results />
+            <Footer />
           </section>
         </div>
+      </div>
     );
   }
 }

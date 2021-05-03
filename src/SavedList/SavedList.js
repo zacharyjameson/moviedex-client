@@ -5,6 +5,7 @@ import DeleteMovie from "../DeleteMovie/DeleteMovie";
 import Navbar from "../Nav/Navbar";
 import RandomMovie from "../RandomMovie/RandomMovie";
 import "../App.css";
+import Footer from "../Footer/Footer";
 
 class SavedList extends Component {
   static defaultProps = {
@@ -42,7 +43,7 @@ class SavedList extends Component {
     return (
       <div className="App_main">
         <Navbar />
-        <section>
+        <section className="results">
           <header>
             <h1>My List</h1>
           </header>
@@ -64,6 +65,7 @@ class SavedList extends Component {
             })}
           </ul>
         </section>
+        <Footer />
       </div>
     );
   }

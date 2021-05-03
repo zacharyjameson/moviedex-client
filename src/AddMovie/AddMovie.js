@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ApiContext from "../ApiContext";
 import config from "../config";
+import notavailable4 from "../images/notavailable4.jpg";
 
 class AddMovie extends Component {
   static defaultProps = {
@@ -8,6 +9,10 @@ class AddMovie extends Component {
   };
 
   static contextType = ApiContext;
+
+  addDefaultSrc(ev) {
+    ev.target.src = notavailable4;
+  }
 
   handleClickAdd = (e) => {
     e.preventDefault();
@@ -42,9 +47,20 @@ class AddMovie extends Component {
 
   render() {
     const { movie_poster, movie_title, year_released, id } = this.props;
+    const brokenImage = notavailable4;
+    const poster = movie_poster;
+    let usedPoster;
+
+    if (!movie_poster) {
+      usedPoster = brokenImage;
+    } else {
+      usedPoster = poster;
+    }
+    
+
     return (
       <div id={id}>
-        <img src={movie_poster} />
+        <img src={usedPoster} onError={this.addDefaultSrc} alt="movie poster" />
         <p>
           {movie_title} - {year_released}
         </p>

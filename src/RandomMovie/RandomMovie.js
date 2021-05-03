@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import ApiContext from "../ApiContext";
+import Footer from "../Footer/Footer";
 import Navbar from "../Nav/Navbar";
 import ValidationError from "../ValidationError";
 import Movie from "./Movie";
@@ -34,7 +35,7 @@ class RandomMovie extends Component {
         <header>
           <h2>Randomizer</h2>
         </header>
-        <div className="randomMovie">
+        <div className="randomMovie results">
           <p>
             Stop faffing about not being able to decide what to watch and let
             Moviedex decide for you! We'll choose one movie from your{" "}
@@ -42,7 +43,11 @@ class RandomMovie extends Component {
             indecisiveness once and for all!
           </p>
 
-          <button className={movies.savedMovies.length > 0 ? "results" : "hidden"} type="button" onClick={this.handleRandomClick} >
+          <button
+            className={movies.savedMovies.length > 0 ? "results" : "hidden"}
+            type="button"
+            onClick={this.handleRandomClick}
+          >
             Pls Help!
           </button>
           <ValidationError message={movies.validateSaved} />
@@ -53,6 +58,7 @@ class RandomMovie extends Component {
             clicked={this.state.clicked}
           />
         </div>
+        <Footer />
       </div>
     );
   }
