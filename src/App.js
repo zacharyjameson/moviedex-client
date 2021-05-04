@@ -46,7 +46,6 @@ class App extends Component {
     this.setState({
       query: e.target.value,
     });
-    console.log(e.target.value);
   };
 
   validateMovie() {
@@ -59,7 +58,7 @@ class App extends Component {
   validateSavedMovies() {
     const savedMovies = this.state.savedMovies;
     if (savedMovies.length === 0) {
-      return "Save some movies first!";
+      return "You need to go save some movies first!";
     }
   }
 
@@ -80,8 +79,6 @@ class App extends Component {
           movies: movieJson.Search,
           errors: movieJson.Error,
         });
-        console.log(this.state.movies);
-        console.log(this.state.errors);
       });
   };
 

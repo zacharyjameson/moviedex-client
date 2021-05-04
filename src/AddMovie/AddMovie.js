@@ -38,7 +38,7 @@ class AddMovie extends Component {
         return res.json();
       })
       .then(() => {
-          this.context.fetchData()
+        this.context.fetchData();
       })
       .catch((error) => {
         console.log("Error: ", error);
@@ -47,24 +47,16 @@ class AddMovie extends Component {
 
   render() {
     const { movie_poster, movie_title, year_released, id } = this.props;
-    const brokenImage = notavailable4;
-    const poster = movie_poster;
-    let usedPoster;
-
-    if (!movie_poster) {
-      usedPoster = brokenImage;
-    } else {
-      usedPoster = poster;
-    }
-    
 
     return (
       <div id={id}>
-        <img src={usedPoster} onError={this.addDefaultSrc} alt="movie poster" />
-        <p>
-          {movie_title} - {year_released}
-        </p>
-        <button type="button" onClick={this.handleClickAdd}>Save to List</button>
+        <img src={movie_poster} onError={this.addDefaultSrc} alt="movie poster" />
+        <div>{movie_title}</div>
+        <div className="nice">{year_released}</div>
+        <br />
+        <button type="button" onClick={this.handleClickAdd}>
+          Save to List
+        </button>
       </div>
     );
   }

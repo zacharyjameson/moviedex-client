@@ -11,7 +11,7 @@ class Navbar extends Component {
 
     return (
       <nav>
-        <Link to="/">Moviedex</Link> | <Link to="/search">Find Movies</Link> |{" "}
+        <Link to="/search">Find Movies</Link> |{" "}
         <Link to="/savedmovies">My List ({savedMovies.savedMovies.length})</Link> |{" "}
         <Link to="/randomizer">Randomizer</Link>
       </nav>

@@ -1,13 +1,18 @@
 import React, { Component } from "react";
-import ApiContext from "../ApiContext";
+import notavailable4 from "../images/notavailable4.jpg";
 
 class Movie extends Component {
+
+  addDefaultSrc(ev) {
+    ev.target.src = notavailable4;
+  }
+
   render() {
     const { poster, title, year, clicked } = this.props;
     return (
       <div className={clicked ? "results" : "hidden"}>
         <p>Moviedex has chosen...</p>
-        <img src={poster} />
+        <img src={poster} onError={this.addDefaultSrc} alt="movie poster unavailable" />
         <p>
           {title} - {year}
         </p>

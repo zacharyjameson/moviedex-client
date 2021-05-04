@@ -3,6 +3,11 @@
   src: url(BandeinsStrangeVariable.ttf);
 }
 
+@font-face {
+  font-family: moviedex;
+  src: url(BebasNeue.otf);
+}
+
 * {
   text-align: center;
   box-sizing: border-box;
@@ -37,7 +42,7 @@ footer {
   left: 0;
   width: 100%;
   background-color: black;
-  padding: 20px;
+  padding: 15px;
 }
 
 a {
@@ -54,6 +59,10 @@ a:hover {
   color: cyan;
 }
 
+footer a:hover {
+  font-size: 16px;
+}
+
 header {
   margin-top: 85px;
 }
@@ -61,19 +70,19 @@ header {
 ul {
   padding: 0;
   list-style-type: none;
+  width: 80%;
 }
 
 li {
-  display: inline-block;
   margin: 10px;
   padding: 10px;
-  width: 50%;
+  width: 300px;
 }
 
 img {
   font-style: italic;
   font-size: 13px;
-  width: 100%;
+  width: 200px;
 }
 
 .error {
@@ -85,8 +94,6 @@ img {
 .hidden {
   display: none;
 }
-
-
 
 .randomMovie img {
   text-align: center;
@@ -101,4 +108,26 @@ img {
 .results {
   margin-bottom: 20px;
   padding-bottom: 20px;
+  width: 100%;
+}
+
+.container {
+  display: inline-block;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  flex-direction: row;
+  justify-content: center;
+  align-items: initial;
+}
+
+.item {
+  margin: 0 auto;
+  align-items: center;
+}
+
+.subheader {
+  width: 60%;
+  margin: auto;
+  margin-bottom: 10px;
 }

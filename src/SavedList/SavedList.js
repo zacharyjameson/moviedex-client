@@ -3,9 +3,9 @@ import ApiContext from "../ApiContext";
 import config from "../config";
 import DeleteMovie from "../DeleteMovie/DeleteMovie";
 import Navbar from "../Nav/Navbar";
-import RandomMovie from "../RandomMovie/RandomMovie";
 import "../App.css";
 import Footer from "../Footer/Footer";
+import ValidationError from "../ValidationError";
 
 class SavedList extends Component {
   static defaultProps = {
@@ -39,21 +39,24 @@ class SavedList extends Component {
 
   render() {
     const { savedMovies = [] } = this.context;
+    const movies = this.context;
 
     return (
-      <div className="App_main">
+      <div className="results">
         <Navbar />
         <section className="results">
           <header>
             <h1>My List</h1>
           </header>
-          <button type="button" onClick={this.handleClearList}>
+          <p className="subheader">Find all of your saved movies here. Click the remove button to delete movies from your list that you've finally gotten around to watching, or maybe just lost interst in entirely</p>
+          <ValidationError message={movies.validateSaved} />
+          <button className={movies.savedMovies.length > 0 ? " " : "hidden"} type="button" onClick={this.handleClearList}>
             Clear My List
           </button>
-          <ul>
+          <ul className="container">
             {savedMovies.map((savedMovie) => {
               return (
-                <li key={savedMovie.id} id={savedMovie.id}>
+                <li className="item" key={savedMovie.id} id={savedMovie.id}>
                   <DeleteMovie
                     id={savedMovie.id}
                     movie_title={savedMovie.movie_title}

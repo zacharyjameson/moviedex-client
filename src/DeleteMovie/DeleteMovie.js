@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ApiContext from "../ApiContext";
 import config from "../config";
+import notavailable4 from "../images/notavailable4.jpg";
 
 class DeleteMovie extends Component {
   static defaultProps = {
@@ -8,6 +9,10 @@ class DeleteMovie extends Component {
   };
 
   static contextType = ApiContext;
+
+  addDefaultSrc(ev) {
+    ev.target.src = notavailable4;
+  }
 
   handleClickRemove = (e) => {
     e.preventDefault();
@@ -23,8 +28,8 @@ class DeleteMovie extends Component {
         if (res.status === 204) return res;
       })
       .then(() => {
-          this.props.onDeleteMovie(movieId);
-          this.context.deleteMovie(movieId);
+        this.props.onDeleteMovie(movieId);
+        this.context.deleteMovie(movieId);
       })
       .catch((error) => {
         console.error({ error });
@@ -35,11 +40,13 @@ class DeleteMovie extends Component {
     const { movie_title, movie_poster, year_released, id } = this.props;
     return (
       <div id={id}>
-        <img src={movie_poster} />
-        <p>
-          {movie_title} - {year_released}
-        </p>
-        <button type="button" onClick={this.handleClickRemove}>Remove From List</button>
+        <img src={movie_poster} onError={this.addDefaultSrc} alt="movie poster unavailable" />
+        <div>{movie_title}</div>
+        <div className="nice">{year_released}</div>
+        <br />
+        <button type="button" onClick={this.handleClickRemove}>
+          Remove From List
+        </button>
       </div>
     );
   }

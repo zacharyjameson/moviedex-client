@@ -12,12 +12,13 @@ class Search extends Component {
     const movies = this.context;
     return (
       <div>
-        <div className="App_main">
+        <div className="searchPage">
           <Navbar />
           <section>
             <header>
-              <h2>Find a Movie</h2>
+              <h2>Find Movies</h2>
             </header>
+            <p className="subheader">Enter a movie title (or as much of it as you can remember) and save what you like by hitting the "Save to List" button.</p>
             <form onSubmit={movies.handleSubmit}>
               <label htmlFor="movieSearch">Search: </label>
               <input

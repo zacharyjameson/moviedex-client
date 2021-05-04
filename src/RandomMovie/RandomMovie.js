@@ -36,7 +36,7 @@ class RandomMovie extends Component {
           <h2>Randomizer</h2>
         </header>
         <div className="randomMovie results">
-          <p>
+          <p className="subheader">
             Stop faffing about not being able to decide what to watch and let
             Moviedex decide for you! We'll choose one movie from your{" "}
             <Link to="/savedmovies">Saved Movies</Link> and end your
@@ -44,7 +44,7 @@ class RandomMovie extends Component {
           </p>
 
           <button
-            className={movies.savedMovies.length > 0 ? "results" : "hidden"}
+            className={movies.savedMovies.length > 0 ? " " : "hidden"}
             type="button"
             onClick={this.handleRandomClick}
           >
