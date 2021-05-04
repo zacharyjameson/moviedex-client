@@ -50,13 +50,25 @@ class AddMovie extends Component {
 
     return (
       <div id={id}>
-        <img src={movie_poster} onError={this.addDefaultSrc} alt="movie poster" />
-        <div>{movie_title}</div>
-        <div className="nice">{year_released}</div>
+        <div className="overlayContainer">
+          <img
+            src={movie_poster}
+            onError={this.addDefaultSrc}
+            alt="movie poster"
+          />
+          <input
+            className="save clickAble"
+            type="button"
+            onClick={this.handleClickAdd}
+            value="Save to List"
+          />
+          <div className="movieBorder">
+            <div>{movie_title}</div>
+            <div className="nice">{year_released}</div>
+          </div>
+        </div>
+
         <br />
-        <button type="button" onClick={this.handleClickAdd}>
-          Save to List
-        </button>
       </div>
     );
   }

@@ -40,13 +40,25 @@ class DeleteMovie extends Component {
     const { movie_title, movie_poster, year_released, id } = this.props;
     return (
       <div id={id}>
-        <img src={movie_poster} onError={this.addDefaultSrc} alt="movie poster unavailable" />
-        <div>{movie_title}</div>
-        <div className="nice">{year_released}</div>
+        <div className="overlayContainer">
+          <img
+            src={movie_poster}
+            onError={this.addDefaultSrc}
+            alt="movie poster unavailable"
+          />
+          <input
+            className="save clickAble"
+            value="Remove"
+            type="button"
+            onClick={this.handleClickRemove}
+          />
+          <div className="movieBorder">
+            <div>{movie_title}</div>
+            <div className="nice">{year_released}</div>
+          </div>
+        </div>
+
         <br />
-        <button type="button" onClick={this.handleClickRemove}>
-          Remove From List
-        </button>
       </div>
     );
   }

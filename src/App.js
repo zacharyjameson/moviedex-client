@@ -87,7 +87,7 @@ class App extends Component {
       <>
         <Route exact path="/" component={HomePage} />
         <Route path="/search" component={Search} />
-        <Route path="/savedmovies" component={SavedList} />
+        <Route path="/mylist" component={SavedList} />
         <Route path="/randomizer" component={RandomMovie} />
       </>
     );

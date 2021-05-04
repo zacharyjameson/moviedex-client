@@ -8,10 +8,19 @@
   src: url(BebasNeue.otf);
 }
 
+html {
+  background: url(./images/movietheater2.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 * {
   text-align: center;
   box-sizing: border-box;
   font-family: fairlyodd;
+  color: white;
 }
 
 .App_main {
@@ -21,8 +30,8 @@
 }
 
 nav {
-  padding: 20px;
-  background-color: black;
+  padding: 0px;
+  background-color: #050f1d;
 }
 
 nav {
@@ -31,40 +40,22 @@ nav {
   left: 0;
   right: 0;
   z-index: 10;
-  color: #1db954;
+  color: white;
   font-weight: bold;
-}
-
-footer {
-  position: fixed;
-  margin-top: 100px;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: black;
-  padding: 15px;
 }
 
 a {
   text-decoration: none;
   color: #1db954;
-}
-
-a:visited {
-  color: grey;
+  font-weight: bold;
 }
 
 a:hover {
-  font-size: 17px;
-  color: cyan;
-}
-
-footer a:hover {
-  font-size: 16px;
+  color: rgb(66, 107, 255);
 }
 
 header {
-  margin-top: 85px;
+  margin-top: 128px;
 }
 
 ul {
@@ -82,6 +73,8 @@ li {
 img {
   font-style: italic;
   font-size: 13px;
+  box-shadow: 0px 5px 20px rgb(70, 69, 69);
+  margin-bottom: 10px;
   width: 200px;
 }
 
@@ -118,16 +111,147 @@ img {
   margin: 0 auto;
   flex-direction: row;
   justify-content: center;
-  align-items: initial;
+  align-items: center;
 }
 
 .item {
   margin: 0 auto;
   align-items: center;
+  justify-content: center;
 }
 
 .subheader {
   width: 60%;
   margin: auto;
   margin-bottom: 10px;
+}
+
+.clickAble {
+  background-color: #1db954;
+  border-radius: 10px;
+  border-color: #1db954;
+  padding: 10px;
+  box-shadow: 0px 5px 10px rgb(70, 69, 69);
+  color: white;
+}
+
+.searchAble {
+  border-radius: 10px;
+  height: 40px;
+}
+
+.navContainer {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+.navItem {
+  flex: 1;
+  justify-content: center;
+  color: #1db954;
+}
+
+.middle {
+  display: flex;
+  flex: 2;
+  margin-top: 0px;
+  justify-content: center;
+}
+
+h2 {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.workLinks {
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+.overlayContainer input {
+  margin-bottom: 10px;
+}
+
+.movieBorder {
+  margin: 0;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgba(5, 15, 29, .8);
+  border: 0;
+  font-weight: bold;
+}
+
+#moviedexLogo {
+  margin: 15px;
+  box-shadow: none;
+}
+
+/* Desktop Styling */
+
+@media all and (min-width: 900px) {
+  .navContainer {
+    flex-direction: row;
+  }
+
+  .middle {
+    margin-top: 10px;
+  }
+
+  h2 {
+    margin-top: 20px;
+  }
+
+  .workLinks {
+    margin-top: 28px;
+  }
+
+  header {
+    margin-top: 85px;
+  }
+
+  .overlayContainer {
+    position: relative;
+    margin: none;
+    padding: none;
+    width: 250px;
+    left: 6%;
+  }
+
+  .overlayContainer:hover img {
+    opacity: 0.6;
+  }
+
+  .overlayContainer img {
+    width: 100%;
+  }
+
+  .overlayContainer input,
+  div.movieBorder {
+    position: absolute;
+    display: none;
+  }
+
+  .overlayContainer:hover input {
+    display: block;
+  }
+
+  .overlayContainer:hover div.movieBorder {
+    display: block;
+  }
+
+  .overlayContainer input {
+    top: 45%;
+    left: 37%;
+  }
+
+  .overlayContainer div.movieBorder {
+    bottom: 13px;
+    width: 100%;
+  }
+
+  .movieBorder{
+    background-color: rgba(5, 15, 29, .5);
+    box-shadow: 2px 2px 10px 1px rgb(58, 57, 57);
+  }
 }

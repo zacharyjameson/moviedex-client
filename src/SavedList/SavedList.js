@@ -4,7 +4,6 @@ import config from "../config";
 import DeleteMovie from "../DeleteMovie/DeleteMovie";
 import Navbar from "../Nav/Navbar";
 import "../App.css";
-import Footer from "../Footer/Footer";
 import ValidationError from "../ValidationError";
 
 class SavedList extends Component {
@@ -46,13 +45,11 @@ class SavedList extends Component {
         <Navbar />
         <section className="results">
           <header>
-            <h1>My List</h1>
+            <h2>My List</h2>
           </header>
           <p className="subheader">Find all of your saved movies here. Click the remove button to delete movies from your list that you've finally gotten around to watching, or maybe just lost interst in entirely</p>
           <ValidationError message={movies.validateSaved} />
-          <button className={movies.savedMovies.length > 0 ? " " : "hidden"} type="button" onClick={this.handleClearList}>
-            Clear My List
-          </button>
+          <input value="Clear My List" className={movies.savedMovies.length > 0 ? "clickAble" : "hidden"} type="button" onClick={this.handleClearList} />
           <ul className="container">
             {savedMovies.map((savedMovie) => {
               return (
@@ -68,7 +65,6 @@ class SavedList extends Component {
             })}
           </ul>
         </section>
-        <Footer />
       </div>
     );
   }

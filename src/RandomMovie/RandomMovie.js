@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import ApiContext from "../ApiContext";
-import Footer from "../Footer/Footer";
 import Navbar from "../Nav/Navbar";
 import ValidationError from "../ValidationError";
 import Movie from "./Movie";
@@ -23,8 +22,6 @@ class RandomMovie extends Component {
       selectedMovie: randomMovie,
       clicked: true,
     });
-    console.log(this.state.selectedMovie);
-    console.log(savedMovies);
   };
   render() {
     const selectedMovie = this.state.selectedMovie;
@@ -39,12 +36,12 @@ class RandomMovie extends Component {
           <p className="subheader">
             Stop faffing about not being able to decide what to watch and let
             Moviedex decide for you! We'll choose one movie from your{" "}
-            <Link to="/savedmovies">Saved Movies</Link> and end your
+            <Link to="/mylist">Saved Movies</Link> and end your
             indecisiveness once and for all!
           </p>
 
           <button
-            className={movies.savedMovies.length > 0 ? " " : "hidden"}
+            className={movies.savedMovies.length > 0 ? "clickAble" : "hidden"}
             type="button"
             onClick={this.handleRandomClick}
           >
@@ -58,7 +55,6 @@ class RandomMovie extends Component {
             clicked={this.state.clicked}
           />
         </div>
-        <Footer />
       </div>
     );
   }
