@@ -15,11 +15,6 @@ class Results extends Component {
         <p>{ohNos.errors}</p>
 
         <section className={movies.length ? "results" : "hidden"}>
-          <h3>
-            Results for...
-            <br />
-            {ohNos.query.toUpperCase()}
-          </h3>
           <div>
             <ul className="container">
               {movies.map((movie, index) => {

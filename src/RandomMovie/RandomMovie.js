@@ -27,12 +27,12 @@ class RandomMovie extends Component {
     const selectedMovie = this.state.selectedMovie;
     const movies = this.context;
     return (
-      <div className="randomMovie">
+      <div className="randomMovie headers">
         <Navbar />
         <header>
           <h2>Randomizer</h2>
         </header>
-        <div className="randomMovie results">
+        <div className="randomMovie">
           <p className="subheader">
             Stop faffing about not being able to decide what to watch and let
             Moviedex decide for you! We'll choose one movie from your{" "}

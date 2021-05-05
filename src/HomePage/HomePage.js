@@ -9,8 +9,9 @@ class HomePage extends Component {
     return (
       <section className="App_main">
         <header>
-        <img id="moviedexLogo" src={moviedex} alt="moviedex" />
+        <img id="moviedexLogoHome" src={moviedex} alt="moviedex" />
         </header>
+        <br />
         <div>
           Tired of not being able to decide on what movie or show to watch next?
           Moviedex lets you scower the internet for your favorite films, save

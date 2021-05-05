@@ -29,6 +29,13 @@ html {
   width: 90%;
 }
 
+.headers {
+  border-radius: 10px;
+  background-color: rgba(5, 15, 29, .5);
+  border: 0;
+  font-weight: bold;
+}
+
 nav {
   padding: 0px;
   background-color: #050f1d;
@@ -40,13 +47,17 @@ nav {
   left: 0;
   right: 0;
   z-index: 10;
-  color: white;
+  color: #1db954;
   font-weight: bold;
+}
+
+nav p {
+  color: #1db954;
 }
 
 a {
   text-decoration: none;
-  color: #1db954;
+  color: white;
   font-weight: bold;
 }
 
@@ -98,10 +109,15 @@ img {
   font-size: 14px;
 }
 
+input[type=text] {
+  color: black;
+}
+
 .results {
   margin-bottom: 20px;
   padding-bottom: 20px;
   width: 100%;
+  font-style: italic;
 }
 
 .container {
@@ -124,6 +140,8 @@ img {
   width: 60%;
   margin: auto;
   margin-bottom: 10px;
+  font-style: normal;
+  font-weight: normal;
 }
 
 .clickAble {
@@ -131,8 +149,10 @@ img {
   border-radius: 10px;
   border-color: #1db954;
   padding: 10px;
-  box-shadow: 0px 5px 10px rgb(70, 69, 69);
   color: white;
+  font-weight: bold;
+  width: 120px;
+  font-size: 15px;
 }
 
 .searchAble {
@@ -155,6 +175,7 @@ img {
 .middle {
   display: flex;
   flex: 2;
+  color: #1db954;
   margin-top: 0px;
   justify-content: center;
 }
@@ -162,11 +183,13 @@ img {
 h2 {
   margin-top: 10px;
   margin-bottom: 0;
+  font-style: normal;
 }
 
 .workLinks {
   margin-top: 0px;
   margin-bottom: 10px;
+  margin-right: 0px;
 }
 
 .overlayContainer input {
@@ -182,9 +205,26 @@ h2 {
   font-weight: bold;
 }
 
+.randomMoviePick p{
+  margin: 0;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgba(5, 15, 29, .5);
+  border: 0;
+  font-weight: bold;
+}
+
 #moviedexLogo {
-  margin: 15px;
+  margin-top: 20px;
+  margin-bottom: 0px;
   box-shadow: none;
+  width: 30%;
+}
+
+#moviedexLogoHome {
+  margin:auto;
+  box-shadow: none;
+  width: 30%;
 }
 
 /* Desktop Styling */
@@ -194,8 +234,12 @@ h2 {
     flex-direction: row;
   }
 
+  #moviedexLogo {
+    width: 200px;
+  }
+
   .middle {
-    margin-top: 10px;
+    margin-top: 15px;
   }
 
   h2 {
@@ -203,7 +247,7 @@ h2 {
   }
 
   .workLinks {
-    margin-top: 28px;
+    margin-top: 32px;
   }
 
   header {
@@ -215,7 +259,7 @@ h2 {
     margin: none;
     padding: none;
     width: 250px;
-    left: 6%;
+    left: 4%;
   }
 
   .overlayContainer:hover img {
@@ -242,7 +286,7 @@ h2 {
 
   .overlayContainer input {
     top: 45%;
-    left: 37%;
+    left: 28%;
   }
 
   .overlayContainer div.movieBorder {

@@ -41,7 +41,7 @@ class SavedList extends Component {
     const movies = this.context;
 
     return (
-      <div className="results">
+      <div>
         <Navbar />
         <section className="results">
           <header>

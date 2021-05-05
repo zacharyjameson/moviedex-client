@@ -31,7 +31,7 @@ class Navbar extends Component {
             alt="github link"
           >
             <FontAwesomeIcon icon={faGithubSquare} className="github" />
-          </a>{" "}
+          </a>{" | "}
           <a
             href="https://www.linkedin.com/in/zacharyjameson/"
             target="_blank"
