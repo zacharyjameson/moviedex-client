@@ -20,7 +20,7 @@ Technology Used:
 
 ## Live Version:
 
-[Moviedex]()
+[Moviedex](https://moviedex-client.vercel.app/)
 
 ## Screenshots
 
