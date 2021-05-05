@@ -118,6 +118,7 @@ input[type=text] {
   padding-bottom: 20px;
   width: 100%;
   font-style: italic;
+  font-weight: bold;
 }
 
 .container {
