@@ -48,7 +48,7 @@ class SavedList extends Component {
           <header>
             <h2>My List</h2>
           </header>
-          <p className="subheader">Find all of your saved movies here. Click the remove button to delete movies from your list that you've finally gotten around to watching, or maybe just lost interst in entirely</p>
+          <p className="subheader">Find all of your saved movies here. Click the remove button to delete movies from your list that you've finally gotten around to watching, or maybe just lost interest in entirely</p>
           {/* VALIDATION THAT MOVIE DATA EXISTS IN SAVED MOVIES TABLE*/}
           <ValidationError message={movies.validateSaved} />
           <input value="Clear My List" className={movies.savedMovies.length > 0 ? "clickAble" : "hidden"} type="button" onClick={this.handleClearList} />
