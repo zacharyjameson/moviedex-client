@@ -16,6 +16,7 @@ class App extends Component {
     savedMovies: [],
   };
 
+  //FETCHES ALL EXISTING DATA ON MOUNT
   componentDidMount() {
     this.fetchAllData();
   }
@@ -28,6 +29,7 @@ class App extends Component {
     });
   };
 
+  //CALLS PSQL DB FOR LIST OF SAVEDMOVIE DATA
   fetchSavedMovies = () => {
     return fetch(`${config.MOVIE_DATABASE_URL}/movies`).then((res) =>
       res.json()
@@ -42,12 +44,14 @@ class App extends Component {
     });
   };
 
+  //CATCHES QUERY TERM INPUT
   handleMovieQuery = (e) => {
     this.setState({
       query: e.target.value,
     });
   };
 
+  //VALIDATION FOR VALID SEARCH INPUT TO OMDb API
   validateMovie() {
     const validMovie = this.state.query.trim();
     if (validMovie.length === 0) {
@@ -55,13 +59,14 @@ class App extends Component {
     }
   }
 
+  //VALIDATION FOR SAVED MOVIE LIST IN PSQL DB 
   validateSavedMovies() {
     const savedMovies = this.state.savedMovies;
     if (savedMovies.length === 0) {
       return "You need to go save some movies first!";
     }
   }
-
+//API REQUEST FOR OMDb API
   handleSubmit = (e) => {
     e.preventDefault();
     const query = this.state.query;
@@ -81,7 +86,7 @@ class App extends Component {
         });
       });
   };
-
+  //RENDER METHODS FOR INDIVIDUAL COMPONENTS
   renderMainRoutes() {
     return (
       <>

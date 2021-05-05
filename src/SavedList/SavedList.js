@@ -12,6 +12,7 @@ class SavedList extends Component {
   };
   static contextType = ApiContext;
 
+  //DELETE REQUEST TO CLEAR ENTIRE MOVIE DATA LIST
   handleClearList = (e) => {
     e.preventDefault();
 
@@ -48,12 +49,14 @@ class SavedList extends Component {
             <h2>My List</h2>
           </header>
           <p className="subheader">Find all of your saved movies here. Click the remove button to delete movies from your list that you've finally gotten around to watching, or maybe just lost interst in entirely</p>
+          {/* VALIDATION THAT MOVIE DATA EXISTS IN SAVED MOVIES TABLE*/}
           <ValidationError message={movies.validateSaved} />
           <input value="Clear My List" className={movies.savedMovies.length > 0 ? "clickAble" : "hidden"} type="button" onClick={this.handleClearList} />
           <ul className="container">
             {savedMovies.map((savedMovie) => {
               return (
                 <li className="item" key={savedMovie.id} id={savedMovie.id}>
+                  {/*SAVED MOVIE SENT TO BE RENDERED WITH DELETE BUTTON*/}
                   <DeleteMovie
                     id={savedMovie.id}
                     movie_title={savedMovie.movie_title}

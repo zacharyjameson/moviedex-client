@@ -22,6 +22,8 @@ class Search extends Component {
                 Enter a movie title (or as much of it as you can remember) and
                 save what you like by hitting the "Save to List" button.
               </p>
+
+              {/*SEARCH INPUT TO QUERY API*/}
               <form onSubmit={movies.handleSubmit}>
                 <input
                   className="searchAble"
@@ -33,6 +35,7 @@ class Search extends Component {
                   required
                 />{" "}
                 <br />
+                {/*VALIDATION MESSAGE UNTIL QUERY IS ENTERED*/}
                 <ValidationError message={movies.validateMovie} />
                 <br />
                 <input

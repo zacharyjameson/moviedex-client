@@ -19,6 +19,7 @@ class Navbar extends Component {
         <div className="middle">
           <p>
           <Link to="/search">Find Movies</Link> |{" "}
+                    {/*renders the number of movies saved in the savedmovie list*/}
           <Link to="/mylist">My List ({savedMovies.savedMovies.length})</Link> |{" "}
           <Link to="/randomizer">Randomizer</Link>
           </p>

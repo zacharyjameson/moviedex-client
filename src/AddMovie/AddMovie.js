@@ -10,10 +10,12 @@ class AddMovie extends Component {
 
   static contextType = ApiContext;
 
+  //ADDS DEFAULT IMAGE WHEN MOVIE POSTER IS NOT AVAILABLE
   addDefaultSrc(ev) {
     ev.target.src = notavailable4;
   }
 
+  //PSQL DB CALL TO ADD INDIVIDUAL MOVIE
   handleClickAdd = (e) => {
     e.preventDefault();
     const { movie_poster, movie_title, year_released } = this.props;

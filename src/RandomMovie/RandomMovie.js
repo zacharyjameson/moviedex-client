@@ -13,6 +13,7 @@ class RandomMovie extends Component {
 
   static contextType = ApiContext;
 
+  //generates a random movie id number from database list
   handleRandomClick = (e) => {
     const { savedMovies = [] } = this.context;
 
@@ -48,6 +49,7 @@ class RandomMovie extends Component {
             Pls Help!
           </button>
           <ValidationError message={movies.validateSaved} />
+          {/*sends information for randomly selected movie to be rendered*/}
           <Movie
             title={selectedMovie.movie_title}
             poster={selectedMovie.movie_poster}

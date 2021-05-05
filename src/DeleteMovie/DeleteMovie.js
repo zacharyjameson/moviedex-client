@@ -10,10 +10,12 @@ class DeleteMovie extends Component {
 
   static contextType = ApiContext;
 
+  //ADDS DEFAULT IMAGE WHEN MOVIE POSTER IS NOT AVAILABLE
   addDefaultSrc(ev) {
     ev.target.src = notavailable4;
   }
 
+  //PSQL DB CALL TO DELETE INDIVIDUAL MOVIE
   handleClickRemove = (e) => {
     e.preventDefault();
     const movieId = this.props.id;

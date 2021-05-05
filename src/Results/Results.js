@@ -10,10 +10,11 @@ class Results extends Component {
     const { movies = [] } = this.context;
     const ohNos = this.context;
 
+    // only renders if searched movies have length
     return (
       <div className="results">
         <p>{ohNos.errors}</p>
-
+                            {/*HIDES RESULTS SECTION UNTIL A SEARCH IS MADE*/}
         <section className={movies.length ? "results" : "hidden"}>
           <div>
             <ul className="container">
